@@ -13,5 +13,10 @@ namespace NativeModuleSample
     {
         return a + b;
     }
+
+    public double AddSync(double a, double b)
+    {
+        return a + b;
+    }
   }
 }

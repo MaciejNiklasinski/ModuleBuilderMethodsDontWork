@@ -23,12 +23,22 @@ const App: () => Node = () => {
           }
         }} />
       <Button
-        title='FancyMathNoAttr'
+        title='FancyMathNoAttr - Async'
         onPress={(e) => {
           try {
             FancyMathNoAttr.add(1.1, 1.1, (sum) => {
               alert(sum); 
             });
+          } catch (error) {
+            alert(error);
+          }
+        }} />
+      <Button
+        title='FancyMathNoAttr - Sync'
+        onPress={(e) => {
+          try {
+            const sum = FancyMathNoAttr.addSync(1.1, 1.1);
+            alert(sum);
           } catch (error) {
             alert(error);
           }

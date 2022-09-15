@@ -28,6 +28,13 @@ namespace NativeModuleSample
             outputWriter.WriteDouble(result);
           resolve(outputWriter);
           });
+
+          moduleBuilder.AddSyncMethod("addSync", (inputReader, outputWriter) => {
+              double a = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
+              double b = inputReader.GetNextArrayItem() ? inputReader.GetDouble() : throw new Exception();
+              double result = module.Add(a, b);
+              outputWriter.WriteDouble(result);
+          });
         return module;
       });
     }
