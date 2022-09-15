@@ -1,4 +1,5 @@
 using Microsoft.ReactNative;
+using NativeModuleSample;
 #if USE_WINUI3
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -33,6 +34,7 @@ namespace ModuleBuilderMethodsDontWork
             Microsoft.ReactNative.Managed.AutolinkedNativeModules.RegisterAutolinkedNativeModulePackages(PackageProviders); // Includes any autolinked modules
 
             PackageProviders.Add(new ReactPackageProvider());
+            PackageProviders.Add(new FancyMathNoAttrPackageProvider());
 
             InitializeComponent();
         }
